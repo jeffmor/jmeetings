@@ -11,7 +11,9 @@ class ParticipanteTests extends GrailsUnitTestCase {
         super.tearDown()
     }
 
-    void testSomething() {
-
+    void testSalvar() {
+        Participante participante = new Participante(nome:"Jefferson Moreira",email:"jeffmor@gmail.com",senha:"123");
+        participante.save();
+        assertEquals "Jefferson Moreira", participante.nome
     }
 }
