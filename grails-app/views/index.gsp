@@ -13,6 +13,12 @@
                         <li>
                            <g:link controller="inscricao" action="list">Inscrições</g:link>
                         </li>
+                        <li>
+                           <g:link controller="endereco" action="list">Enderecos</g:link>
+                        </li>
+                        <li>
+                           <g:link controller="participante" action="list">Participantes</g:link>
+                        </li>
                       </ul>
                   </div>
 		</div>

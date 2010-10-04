@@ -1,6 +1,6 @@
 package jmeetings
 
-class InscricaoController {
+class EnderecoController {
 
     def scaffold = true
 }
