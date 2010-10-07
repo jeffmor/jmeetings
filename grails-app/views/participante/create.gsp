@@ -73,22 +73,41 @@
                                     <g:textField name="instituicao" value="${participanteInstance?.instituicao}" />
                                 </td>
                             </tr>
-                        
-                            <tr class="prop">
-                                <td valign="top" class="name">
-                                    <label for="endereco"><g:message code="participante.endereco.label" default="Endereco" /></label>
-                                </td>
-                                <td valign="top" class="value ${hasErrors(bean: participanteInstance, field: 'endereco', 'errors')}">
-                                   <modalbox:createLink controller="endereco" action="create" title="Endereco" width="500">Adicione o endereço</modalbox:createLink>
-                                </td>
-                            </tr>
-                        
+                     
                             <tr class="prop">
                                 <td valign="top" class="name">
                                     <label for="dataNascimento"><g:message code="participante.dataNascimento.label" default="Data Nascimento" /></label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: participanteInstance, field: 'dataNascimento', 'errors')}">
                                     <g:datePicker name="dataNascimento" precision="day" value="${participanteInstance?.dataNascimento}"  />
+                                </td>
+                            </tr>
+
+
+                             <tr class="prop">
+                                <td valign="top" class="name">
+                                    <label for="cidade"><g:message code="endereco.cidade.label" default="Cidade" /></label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean: participanteInstance.endereco, field: 'cidade', 'errors')}">
+                                    <g:textField name="cidade" value="${participanteInstance.endereco?.cidade}" />
+                                </td>
+                            </tr>
+
+                            <tr class="prop">
+                                <td valign="top" class="name">
+                                    <label for="logradouro"><g:message code="endereco.logradouro.label" default="Logradouro" /></label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean: participanteInstance.endereco, field: 'logradouro', 'errors')}">
+                                    <g:textField name="logradouro" value="${participanteInstance.endereco?.logradouro}" />
+                                </td>
+                            </tr>
+
+                            <tr class="prop">
+                                <td valign="top" class="name">
+                                    <label for="numero"><g:message code="endereco.numero.label" default="Numero" /></label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean: participanteInstance.endereco, field: 'numero', 'errors')}">
+                                    <g:textField name="numero" value="${fieldValue(bean: participanteInstance.endereco, field: 'numero')}" />
                                 </td>
                             </tr>
                         
