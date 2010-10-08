@@ -15,18 +15,18 @@ class ParticipanteController {
 
     def create = {
         def participanteInstance = new Participante()
-        def enderecoInstance = new Endereco()
-        participanteInstance.endereco = enderecoInstance
         participanteInstance.properties = params
         return [participanteInstance: participanteInstance]
     }
 
     def save = {
         def participanteInstance = new Participante(params)
+        def enderecoInstance = new Endereco(params)
         if (participanteInstance.save(flush: true)) {
-            def enderecoInstance = new Endereco()
             enderecoInstance.participante = participanteInstance;
-            enderecoInstance.save()
+            if(enderecoInstance.save(flush: true)){
+                participanteInstance.endereco = enderecoInstance
+            }
             flash.message = "${message(code: 'default.created.message', args: [message(code: 'participante.label', default: 'Participante'), participanteInstance.id])}"
             redirect(action: "show", id: participanteInstance.id)
         }

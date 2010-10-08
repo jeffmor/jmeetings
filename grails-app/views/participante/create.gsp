@@ -89,7 +89,7 @@
                                     <label for="cidade"><g:message code="endereco.cidade.label" default="Cidade" /></label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: participanteInstance.endereco, field: 'cidade', 'errors')}">
-                                    <g:textField name="cidade" value="${participanteInstance.endereco?.cidade}" />
+                                    <g:textField name="cidade" value="${enderecoInstance?.cidade}" />
                                 </td>
                             </tr>
 
@@ -98,7 +98,7 @@
                                     <label for="logradouro"><g:message code="endereco.logradouro.label" default="Logradouro" /></label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: participanteInstance.endereco, field: 'logradouro', 'errors')}">
-                                    <g:textField name="logradouro" value="${participanteInstance.endereco?.logradouro}" />
+                                    <g:textField name="logradouro" value="${enderecoInstance?.logradouro}" />
                                 </td>
                             </tr>
 
@@ -107,7 +107,7 @@
                                     <label for="numero"><g:message code="endereco.numero.label" default="Numero" /></label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: participanteInstance.endereco, field: 'numero', 'errors')}">
-                                    <g:textField name="numero" value="${fieldValue(bean: participanteInstance.endereco, field: 'numero')}" />
+                                    <g:textField name="numero" value="${fieldValue(bean: enderecoInstance, field: 'numero')}" />
                                 </td>
                             </tr>
                         
